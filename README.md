@@ -1,5 +1,5 @@
 Inverted binary tree. Now I can clear the google interview 💪
-
+```
     3
   2
     4
@@ -15,3 +15,4 @@ Inverted binary tree. Now I can clear the google interview 💪
     4
   2
     3
+```
