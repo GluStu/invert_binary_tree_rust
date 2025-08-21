@@ -71,12 +71,22 @@ fn invert_tree<T>(root: Option<Box<TreeNode<T>>>) -> Option<Box<TreeNode<T>>> {
     }
     None
 }
+
+pub fn max_depth<T>(root: Option<Box<TreeNode<T>>>) -> i32 {
+        if let Some(mut node) = root {
+            return std::cmp::max(max_depth(node.left.take()), max_depth(node.right.take())) + 1;
+        }
+        0
+    }
+
 fn main() {
     let mut counter = 1;
     let tree = generate_tree(3, &mut counter);
+    let treet = generate_tree(3, &mut counter);
     print_tree(&tree, 3);
     println!("-----------------------");
     print_tree(&invert_tree(tree),3);
+    println!("Max depth: {}", max_depth(treet));
 }
 
 // use std::rc::Rc;
